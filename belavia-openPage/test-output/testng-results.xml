@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="3228" started-at="2018-07-22T17:12:08Z" finished-at="2018-07-22T17:12:11Z">
+  <suite name="Default suite" duration-ms="22026" started-at="2018-07-25T12:45:31Z" finished-at="2018-07-25T12:45:53Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="3228" started-at="2018-07-22T17:12:08Z" finished-at="2018-07-22T17:12:11Z">
+    <test name="Default test" duration-ms="22026" started-at="2018-07-25T12:45:31Z" finished-at="2018-07-25T12:45:53Z">
       <class name="by.htp.belavia.TicketsTest">
-        <test-method status="PASS" signature="setUpTest()[pri:0, instance:by.htp.belavia.TicketsTest@8bd1b6a]" name="setUpTest" is-config="true" duration-ms="3068" started-at="2018-07-22T20:12:08Z" finished-at="2018-07-22T20:12:11Z">
+        <test-method status="PASS" signature="setUpTest()[pri:0, instance:by.htp.belavia.TicketsTest@8bd1b6a]" name="setUpTest" is-config="true" duration-ms="2063" started-at="2018-07-25T15:45:31Z" finished-at="2018-07-25T15:45:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpTest -->
-        <test-method status="PASS" signature="sysout()[pri:0, instance:by.htp.belavia.TicketsTest@8bd1b6a]" name="sysout" duration-ms="6" started-at="2018-07-22T20:12:11Z" finished-at="2018-07-22T20:12:11Z">
+        <test-method status="PASS" signature="sysout()[pri:0, instance:by.htp.belavia.TicketsTest@8bd1b6a]" name="sysout" duration-ms="19788" started-at="2018-07-25T15:45:33Z" finished-at="2018-07-25T15:45:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- sysout -->
-        <test-method status="PASS" signature="finish()[pri:0, instance:by.htp.belavia.TicketsTest@8bd1b6a]" name="finish" is-config="true" duration-ms="133" started-at="2018-07-22T20:12:11Z" finished-at="2018-07-22T20:12:11Z">
+        <test-method status="PASS" signature="finish()[pri:0, instance:by.htp.belavia.TicketsTest@8bd1b6a]" name="finish" is-config="true" duration-ms="154" started-at="2018-07-25T15:45:53Z" finished-at="2018-07-25T15:45:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finish -->
