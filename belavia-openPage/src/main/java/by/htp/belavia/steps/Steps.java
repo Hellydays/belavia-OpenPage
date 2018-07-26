@@ -22,8 +22,7 @@ public class Steps {
 		mainPage.openPage();
 		
 		mainPage.enterLocationFrom(locationFrom);
-		mainPage.enterLocationTo(locationTo);
-		
+		mainPage.enterLocationTo(locationTo);	
 		mainPage.enterDepartureDate();
 		mainPage.selectOneWay();
 		mainPage.clickSearch();
@@ -39,10 +38,8 @@ public class Steps {
 		
 		mainPage.enterLocationFrom(locationFrom);
 		mainPage.enterLocationTo(locationTo);
-		
 		mainPage.enterDepartureDate();
 		mainPage.enterReturnDate();
-		
 		mainPage.clickSearch();
 		
 		return mainPage;
@@ -58,7 +55,9 @@ public class Steps {
 	
 	public ResultsPage getSearchResultsWithReturn() {
 		ResultsPage resultsPage = new ResultsPage(driver);
-		resultsPage.getTicketsWithReturn();
+		List<Ticket> tickets = resultsPage.getTicketsWithReturn();
+		resultsPage.sortByCloserFlightDate(tickets);
+		resultsPage.printListOfTickets(tickets);
 		return resultsPage;
 	}
 

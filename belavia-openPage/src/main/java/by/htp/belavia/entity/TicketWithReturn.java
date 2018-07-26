@@ -1,6 +1,6 @@
 package by.htp.belavia.entity;
 
-public class TicketWithReturn extends Ticket {
+public class TicketWithReturn extends Ticket implements Comparable<Ticket> {
 	
 	private String returnDate;
 	
@@ -30,7 +30,6 @@ public class TicketWithReturn extends Ticket {
 	public String toString() {
 		return "TicketWithReturn [returnDate=" + returnDate + " " + super.toString() + "]";
 	}
-	
 	
 	
 }

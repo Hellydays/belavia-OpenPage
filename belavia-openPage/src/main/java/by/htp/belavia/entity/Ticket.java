@@ -82,24 +82,7 @@ public class Ticket implements Comparable<Ticket> {
 			return 0;
 		}
 		
-		//@Override
-//		public int compare(Ticket o1, Ticket o2) {
-//			
-//			String o1cost = o1.getTicketCost().replaceAll("[^0-9]","");
-//			int cost1 = Integer.parseInt(o1cost);
-//			
-//			String o2cost = o2.getTicketCost().replaceAll("[^0-9]","");
-//			int cost2 = Integer.parseInt(o2cost);	
-//			
-//			if(cost1 > cost2) {
-//				return 1;
-//			} else if(cost1 > cost2) {
-//				return -1;
-//			} else {
-//				return 0;
-//			}
-//			
-//		}
 	}
+	
 	
 }
