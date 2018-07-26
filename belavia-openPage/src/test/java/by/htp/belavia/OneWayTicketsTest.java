@@ -13,7 +13,7 @@ public class OneWayTicketsTest extends BaseTest {
 	
 	@Test
 	public void OneWayTicketsLog() {
-		MainPage mainPage = steps.enterCriteria(locationFrom, locationTo);
-		ResultsPage resultsPage = steps.getSearchResults();
+		MainPage mainPage = steps.enterCriteriaForOneWay(locationFrom, locationTo);
+		ResultsPage resultsPage = steps.getSearchResultsOneWay();
 	}
 }

@@ -3,6 +3,8 @@ package by.htp.belavia.pages;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -14,6 +16,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import by.htp.belavia.entity.Ticket;
+import by.htp.belavia.entity.TicketWithReturn;
 
 public class ResultsPage extends AbstractPage {
 
@@ -29,6 +32,9 @@ public class ResultsPage extends AbstractPage {
 	@FindBy(xpath = "//div[@class = \"nav-right\"]//i")
 	WebElement next;
 
+	@FindBy(xpath = "//div[@class='price']/div")
+	List<WebElement> returnTicketsList;
+
 	public ResultsPage(WebDriver driver) {
 		super(driver);
 		PageFactory.initElements(this.driver, this);
@@ -39,7 +45,7 @@ public class ResultsPage extends AbstractPage {
 
 	}
 
-	public void getTickets() {
+	public List<Ticket> getTicketsOneWay() {
 
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		wait.until(ExpectedConditions.visibilityOf(fareCalendar));
@@ -51,7 +57,7 @@ public class ResultsPage extends AbstractPage {
 
 		do {
 			for (WebElement element : datesList) {
-				
+
 				WebElement price = element.findElement(By.xpath("following-sibling::label"));
 				String date = element.getAttribute("value");
 
@@ -61,16 +67,16 @@ public class ResultsPage extends AbstractPage {
 				ticket.setTicketCost(price.getText());
 				tickets.add(ticket);
 
-				System.out.println(ticket.toString());
-
 			}
-			
+
 			WebElement next = driver.findElement(By.xpath("//i[@class='icon-right-open']"));
 			wait.until(ExpectedConditions.visibilityOf(next));
 
 			next.click();
 
 		} while (checkIfLast(tickets, ticket));
+		
+		return tickets;
 
 	}
 
@@ -95,4 +101,50 @@ public class ResultsPage extends AbstractPage {
 
 		return shouldClickNext;
 	}
+
+	public void getTicketsWithReturn() {
+
+		WebDriverWait wait = new WebDriverWait(driver, 10);
+
+		Ticket ticketWithReturn = null;
+		List<Ticket> tickets = new ArrayList<>();
+		do {
+			for (WebElement element : returnTicketsList) {
+				ticketWithReturn = new TicketWithReturn();
+
+				WebElement dateElement = element.findElement(By.xpath("input"));
+				WebElement priceElement = element.findElement(By.xpath("label"));
+
+				String datesString = dateElement.getAttribute("value");
+				String[] datesArr = datesString.split(":");
+				String priceString = priceElement.getText();
+
+				ticketWithReturn.setFlightDate(datesArr[0]);
+				((TicketWithReturn) ticketWithReturn).setReturnDate(datesArr[1]);
+				ticketWithReturn.setTicketCost(priceString);
+
+				tickets.add(ticketWithReturn);
+				System.out.println(ticketWithReturn.toString());
+
+			}
+			
+			WebElement next = driver.findElement(By.xpath("//i[@class='icon-right-open']"));
+			wait.until(ExpectedConditions.visibilityOf(next));
+
+			next.click();
+
+		} while (checkIfLast(tickets, ticketWithReturn));
+
+	}
+	
+	public void sortByPriceAsc(List<Ticket> list) {
+		Collections.sort(list);		
+	}
+	
+	public void printListOfTickets(List<Ticket> list) {
+		for(Ticket ticket : list) {
+			System.out.println(ticket.toString());
+		}
+	}
+
 }

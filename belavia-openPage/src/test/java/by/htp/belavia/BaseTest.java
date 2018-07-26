@@ -32,6 +32,5 @@ public abstract class BaseTest {
 	public void finish() {
 		driver.close();	
 	}
-	
 
 }

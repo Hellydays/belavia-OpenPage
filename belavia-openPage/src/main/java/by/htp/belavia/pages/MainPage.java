@@ -32,6 +32,9 @@ public class MainPage extends AbstractPage {
 	@FindBy(xpath = "//div[@class=\"col-group form-group\"]//button[@type =\"submit\"]")
 	WebElement SearchButton;
 	
+	@FindBy(xpath = "//input[@id = \"ReturnDate_Datepicker\"]/following-sibling::a")
+	WebElement returnDateField;
+	
 	public MainPage(WebDriver driver) {
 		super(driver);
 		PageFactory.initElements(this.driver, this);
@@ -73,6 +76,13 @@ public class MainPage extends AbstractPage {
 	// it would be better to add check if calendar is already opened or no
 	public void enterDepartureDate() {
 		augustFirst.click();	
+	}
+	
+	// it would be better to add check if calendar is already opened or no
+	public void enterReturnDate() {
+//		returnDateField.click();
+		augustFirst.click();	
+		
 	}
 	
 	public void clickSearch() {
