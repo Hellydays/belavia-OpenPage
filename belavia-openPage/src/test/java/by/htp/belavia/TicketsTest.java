@@ -3,6 +3,7 @@ package by.htp.belavia;
 import org.testng.annotations.Test;
 
 import by.htp.belavia.pages.MainPage;
+import by.htp.belavia.pages.ResultsPage;
 
 public class TicketsTest extends BaseTest {
 	
@@ -21,6 +22,9 @@ public class TicketsTest extends BaseTest {
 		mainPage.enterDepartureDate();
 		mainPage.selectOneWay();
 		mainPage.clickSearch();
+		
+		ResultsPage resultsPage = new ResultsPage(driver);
+		resultsPage.getTickets();
 	}
 
 }

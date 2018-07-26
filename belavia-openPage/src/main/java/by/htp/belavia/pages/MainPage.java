@@ -2,7 +2,6 @@ package by.htp.belavia.pages;
 
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -78,12 +77,6 @@ public class MainPage extends AbstractPage {
 	
 	public void clickSearch() {
 		SearchButton.click();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 
 }
