@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="37265" started-at="2018-07-26T07:39:14Z" finished-at="2018-07-26T07:39:51Z">
+  <suite name="Default suite" duration-ms="28137" started-at="2018-07-26T08:30:56Z" finished-at="2018-07-26T08:31:24Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="37265" started-at="2018-07-26T07:39:14Z" finished-at="2018-07-26T07:39:51Z">
-      <class name="by.htp.belavia.TicketsTest">
-        <test-method status="PASS" signature="setUpTest()[pri:0, instance:by.htp.belavia.TicketsTest@8bd1b6a]" name="setUpTest" is-config="true" duration-ms="1933" started-at="2018-07-26T10:39:14Z" finished-at="2018-07-26T10:39:16Z">
+    <test name="Default test" duration-ms="28137" started-at="2018-07-26T08:30:56Z" finished-at="2018-07-26T08:31:24Z">
+      <class name="by.htp.belavia.OneWayTicketsTest">
+        <test-method status="PASS" signature="setUpTest()[pri:0, instance:by.htp.belavia.OneWayTicketsTest@8bd1b6a]" name="setUpTest" is-config="true" duration-ms="1859" started-at="2018-07-26T11:30:56Z" finished-at="2018-07-26T11:30:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpTest -->
-        <test-method status="PASS" signature="sysout()[pri:0, instance:by.htp.belavia.TicketsTest@8bd1b6a]" name="sysout" duration-ms="35183" started-at="2018-07-26T10:39:16Z" finished-at="2018-07-26T10:39:51Z">
+        <test-method status="PASS" signature="OneWayTicketsLog()[pri:0, instance:by.htp.belavia.OneWayTicketsTest@8bd1b6a]" name="OneWayTicketsLog" duration-ms="26141" started-at="2018-07-26T11:30:58Z" finished-at="2018-07-26T11:31:24Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- sysout -->
-        <test-method status="PASS" signature="finish()[pri:0, instance:by.htp.belavia.TicketsTest@8bd1b6a]" name="finish" is-config="true" duration-ms="123" started-at="2018-07-26T10:39:51Z" finished-at="2018-07-26T10:39:51Z">
+        </test-method> <!-- OneWayTicketsLog -->
+        <test-method status="PASS" signature="finish()[pri:0, instance:by.htp.belavia.OneWayTicketsTest@8bd1b6a]" name="finish" is-config="true" duration-ms="114" started-at="2018-07-26T11:31:24Z" finished-at="2018-07-26T11:31:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- finish -->
-      </class> <!-- by.htp.belavia.TicketsTest -->
+      </class> <!-- by.htp.belavia.OneWayTicketsTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
