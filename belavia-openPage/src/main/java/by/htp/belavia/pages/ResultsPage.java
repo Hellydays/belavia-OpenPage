@@ -75,7 +75,7 @@ public class ResultsPage extends AbstractPage {
 			next.click();
 
 		} while (checkIfLast(tickets, ticket));
-		
+
 		return tickets;
 
 	}
@@ -125,46 +125,46 @@ public class ResultsPage extends AbstractPage {
 
 				tickets.add(ticketWithReturn);
 			}
-			
+
 			WebElement next = driver.findElement(By.xpath("//i[@class='icon-right-open']"));
 			wait.until(ExpectedConditions.visibilityOf(next));
 
 			next.click();
 
 		} while (checkIfLast(tickets, ticketWithReturn));
-		
+
 		return tickets;
 
 	}
-	
+
 	public void sortByPriceAsc(List<Ticket> list) {
-		Collections.sort(list);		
+		Collections.sort(list);
 	}
-	
+
 	public void sortByCloserFlightDate(List<Ticket> list) {
-		
+
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yy-MM-dd");
 		Collections.sort(list, new Comparator<Ticket>() {
-		
+
 			@Override
 			public int compare(Ticket o1, Ticket o2) {
 				LocalDate o1localDate = LocalDate.parse(o1.getFlightDate(), formatter);
 				LocalDate o2localDate = LocalDate.parse(o2.getFlightDate(), formatter);
 				if (o1localDate.isAfter(o2localDate)) {
 					return 1;
-				} else if(o1localDate.isBefore(o2localDate)) {
+				} else if (o1localDate.isBefore(o2localDate)) {
 					return -1;
 				} else {
 					return 0;
 				}
-				
+
 			}
 		});
 	}
-	
+
 	public void printListOfTickets(List<Ticket> list) {
 		
-		for(Ticket ticket : list) {
+		for (Ticket ticket : list) {
 			System.out.println(ticket.toString());
 		}
 	}

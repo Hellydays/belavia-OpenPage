@@ -1,10 +1,10 @@
 package by.htp.belavia.entity;
 
 public class Ticket implements Comparable<Ticket> {
-	
+
 	private String flightDate;
 	private String ticketCost;
-	
+
 	public Ticket() {
 	}
 
@@ -29,7 +29,6 @@ public class Ticket implements Comparable<Ticket> {
 	public void setTicketCost(String ticketCost) {
 		this.ticketCost = ticketCost;
 	}
-
 
 	@Override
 	public int hashCode() {
@@ -61,7 +60,7 @@ public class Ticket implements Comparable<Ticket> {
 			return false;
 		return true;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Ticket [flightDate=" + flightDate + ", ticketCost=" + ticketCost + "]";
@@ -69,20 +68,19 @@ public class Ticket implements Comparable<Ticket> {
 
 	@Override
 	public int compareTo(Ticket o) {
-		String thisCostString = this.ticketCost.replaceAll("[^0-9]","");
+		String thisCostString = this.ticketCost.replaceAll("[^0-9]", "");
 		int cost = Integer.parseInt(thisCostString);
-		
-		String comparedToCostString = o.getTicketCost().replaceAll("[^0-9]","");
+
+		String comparedToCostString = o.getTicketCost().replaceAll("[^0-9]", "");
 		int comparedCost = Integer.parseInt(comparedToCostString);
-		if(cost > comparedCost) {
+		if (cost > comparedCost) {
 			return 1;
-		} else if( cost < comparedCost) {
+		} else if (cost < comparedCost) {
 			return -1;
 		} else {
 			return 0;
 		}
-		
+
 	}
-	
-	
+
 }
